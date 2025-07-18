@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1-2档站台门不能打开处理</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>1-2档站台门不能打开处理流程</h1>
+    <p>当前步骤：<span id="step">1/5</span></p>
+    
+    <!-- 图片与热点区域 -->
+    <div class="operation-area">
+        <img id="main-img" src="../../01_故障图片/01_1-2档不能打开/01_step1_发现故障.jpg" usemap="#operation-map">
+        <!-- 热点映射：绑定坐标与操作 -->
+        <map name="operation-map" id="operation-map">
+            <area shape="rect" coords="" id="current-hotspot" href="javascript:void(0);">
+        </map>
+    </div>
+    
+    <!-- 提示与按钮 -->
+    <div class="feedback" id="feedback">请点击图片中“故障门体”位置（右侧第2档）</div>
+    <div class="btn-group">
+        <button id="prev-btn" disabled>上一步</button>
+        <button id="next-btn" disabled>下一步</button>
+    </div>
+
+    <script src="../js/hotspot.js"></script>
+    <script>
+        // 1-2档不能打开的步骤配置（对应热点坐标表）
+        const steps = [
+            {
+                imgSrc: "../../01_故障图片/01_1-2档不能打开/01_step1_发现故障.jpg",
+                hotspotCoords: "620,300,680,450", // 故障门体坐标
+                correctHint: "正确：已确认1-2档门体不能打开",
+                errorHint: "错误：请点击右侧第2档故障门体（标注区域）"
+            },
+            {
+                imgSrc: "../../01_故障图片/01_1-2档不能打开/01_step2_手动关位.jpg",
+                hotspotCoords: "320,280,380,340", // 手动关按钮坐标
+                correctHint: "正确：已将该档门置于“手动关”位",
+                errorHint: "错误：请点击操作面板上的“手动关”按钮（绿色）"
+            },
+            {
+                imgSrc: "../../01_故障图片/01_1-2档不能打开/01_step3_报车控室.jpg",
+                hotspotCoords: "500,200,550,250", // 通话器坐标
+                correctHint: "正确：已向车控室上报故障",
+                errorHint: "错误：请点击车控室通话器（红色按钮）"
+            },
+            {
+                imgSrc: "../../01_故障图片/01_1-2档不能打开/01_step4_好了信号.jpg",
+                hotspotCoords: "200,400,260,480", // “好了”手势坐标
+                correctHint: "正确：已向司机显示“好了”信号",
+                errorHint: "错误：请点击图片中“好了”手势位置（绿色信号旗）"
+            },
+            {
+                imgSrc: "../../01_故障图片/01_1-2档不能打开/01_step5_设置防护.jpg",
+                hotspotCoords: "150,500,200,580", // 防护栏坐标
+                correctHint: "正确：已设置防护并张贴告示，流程完成",
+                errorHint: "错误：请点击安全线内的防护栏放置点"
+            }
+        ];
+
+        // 初始化交互（调用通用逻辑）
+        initOperation(steps);
+    </script>
+</body>
+</html>

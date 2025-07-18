@@ -1,0 +1,71 @@
+/* 基础样式 */
+body {
+    font-family: "微软雅黑";
+    padding: 20px;
+}
+
+/* 故障选择卡片 */
+.fault-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 每行3个卡片 */
+    gap: 20px;
+    margin-top: 30px;
+}
+.card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card:hover {
+    border-color: #003366; /* 地铁蓝高亮 */
+}
+
+/* 操作区域样式 */
+.operation-area {
+    margin-top: 20px;
+}
+.operation-area img {
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #eee;
+}
+
+/* 提示框样式 */
+.feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.feedback.correct {
+    background-color: #e6f7e9;
+    color: #006633;
+}
+.feedback {
+    background-color: #fff2e8;
+    color: #cc3300;
+}
+
+/* 按钮样式 */
+.btn-group {
+    margin-top: 15px;
+}
+.btn-group button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-group button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
